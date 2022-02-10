@@ -1,13 +1,11 @@
-import type { Contact } from "src/types/Contact";
-
+import type { Contact } from "../types/Contact";
 import mockData from "./mockData.json";
 
 let cursor = -1;
 const size = 10;
 
-function delay(time: number): Promise<void> {
-  return new Promise((resolve) => setTimeout(() => resolve(), time));
-}
+const delay = (time: number): Promise<void> =>
+  new Promise((resolve) => setTimeout(() => resolve(), time));
 
 export const apiData = async (): Promise<Contact[]> => {
   await delay(1000);
