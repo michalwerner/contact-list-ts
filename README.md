@@ -1,3 +1,35 @@
+# Notes
+
+## Main points of the solution:
+
+- list virtualization to fight performance issues using `react-window`
+- handling of "finished" state when there's no more data to load (message and disabled button)
+- retry mechanizm for initial loading (increase fail probability in `api.ts` to observe it easier)
+- the list is scrolling down after new elements are loaded to indicate new content available
+- a bit experimental approach to selecting cards:
+
+  The most obvious solutions seem to be a) to sort contacts by their "selected" state or b) render a separate collection of selected contacts above the main list.
+
+  I wanted to have that "pinned" list also virtualized, but without using two separate virtualized lists. I decided to put selected contacts as copies at the beginning of the list.
+
+  UX perspective:
+
+  - selected cards are visible both at the top and on their regular place and can be deselected on both positions
+  - the user doesn't experience disappearing items when selecting or deselecting
+  - copies at the top are marked with a "pin" icon
+  - for most cases the user doesn't experience any jumping, the scroll of the list is automatically corrected (some private properties of the library were used, but it works fine)
+  - when the user is at the top of the list and cards from near the top are selected, duplicates are visible - that's a drawback of the solution
+
+I wanted to do some experiments and learn while doing this task. That's why some functionality extends the definition of done. I admit that as a result it took a bit longer than I expected and that's the reason for missing tests.
+
+## Some possible improvements:
+
+- tests could be written
+- props drilling (see `toggleContactSelection`) could be reduced, for example by using React context
+- there could be much better styling
+- virtualized list could be sized smarter
+- scroll of virtualized list could be controlled by the window scroll
+
 # TODO
 
 Please do not fork the repo, clone it and put it in your own github / save it locally.
