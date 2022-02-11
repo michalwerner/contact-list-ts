@@ -16,15 +16,31 @@ export const PersonInfo: React.FC<Props> = ({
     isPinned,
   },
   toggleContactSelection,
-}) => (
-  <div
-    className={cx(styles.root, { [styles.selected]: isSelected })}
-    onClick={() => toggleContactSelection(id)}
-  >
-    <div className={styles.firstNameLastName}>
-      {isPinned && "📌"} {firstNameLastName}
+}) => {
+  const initials = firstNameLastName
+    .split(" ")
+    .map((name) => name[0] ?? "")
+    .join("");
+
+  return (
+    <div
+      className={cx(styles.root, { [styles.selected]: isSelected })}
+      onClick={() => toggleContactSelection(id)}
+    >
+      <div className={styles.topRow}>
+        <div className={styles.initials}>{initials}</div>
+        <div className={styles.nameJobTitle}>
+          <div className={styles.firstNameLastName} title={firstNameLastName}>
+            {isPinned && "📌"} {firstNameLastName}
+          </div>
+          <div className={styles.jobTitle} title={jobTitle}>
+            {jobTitle}
+          </div>
+        </div>
+      </div>
+      <div className={styles.emailAddress} title={emailAddress}>
+        {emailAddress}
+      </div>
     </div>
-    <div className={styles.jobTitle}>{jobTitle}</div>
-    <div className={styles.emailAddress}>{emailAddress}</div>
-  </div>
-);
+  );
+};

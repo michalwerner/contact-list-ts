@@ -6,6 +6,7 @@
 - handling of "finished" state when there's no more data to load (message and disabled button)
 - retry mechanizm for initial loading (increase fail probability in `api.ts` to observe it easier)
 - the list is scrolling down after new elements are loaded to indicate new content available
+- page is responsive to some extent
 - a bit experimental approach to selecting cards:
 
   The most obvious solutions seem to be a) to sort contacts by their "selected" state or b) render a separate collection of selected contacts above the main list.

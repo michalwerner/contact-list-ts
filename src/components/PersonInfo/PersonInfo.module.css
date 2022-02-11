@@ -20,11 +20,27 @@
   border-color: #ff0000;
 }
 
-.firstNameLastName,
-.jobTitle,
-.emailAddress {
-  white-space: nowrap;
-  text-overflow: ellipsis;
+.topRow {
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+}
+
+.initials {
+  text-transform: uppercase;
+  border: solid 1px #000;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.nameJobTitle {
+  text-align: left;
   overflow: hidden;
 }
 
@@ -38,10 +54,19 @@
   color: #e74c3c;
   font-size: 14px;
   font-weight: 400;
+  text-transform: uppercase;
 }
 
 .emailAddress {
   color: #666666;
   font-size: 12px;
   line-height: 1.8em;
+}
+
+.firstNameLastName,
+.jobTitle,
+.emailAddress {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
