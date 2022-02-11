@@ -5,3 +5,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: #f4f4f4;
 }
+
+* {
+  box-sizing: border-box;
+}

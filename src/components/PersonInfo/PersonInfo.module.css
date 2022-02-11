@@ -1,43 +1,47 @@
 .root {
   display: flex;
-  height: 100px;
   justify-content: center;
   flex-direction: column;
-  padding: 32px;
-  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
-  margin: 10px 0;
+  padding: 5px 32px;
+  border: 2px solid #fff;
+  box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.15);
+  margin: 10px auto;
   background: #fff;
   cursor: pointer;
+  width: calc(100% - 40px);
+  height: 100px;
 }
 
 .root:hover {
-  padding: 30px;
-  border: 2px solid pink;
+  box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.3);
 }
 
 .selected {
-  color: #333333;
-  font-size: 26px;
-  font-weight: 700;
-  margin: 10px 20px 0 0;
+  border-color: #ff0000;
+}
+
+.firstNameLastName,
+.jobTitle,
+.emailAddress {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .firstNameLastName {
-  padding: 0 0 10px;
   color: #333333;
-  font-size: 26px;
+  font-size: 18px;
   font-weight: 700;
 }
 
 .jobTitle {
-  padding: 0 0 20px;
   color: #e74c3c;
-  font-size: 20px;
+  font-size: 14px;
   font-weight: 400;
 }
 
 .emailAddress {
   color: #666666;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.8em;
 }

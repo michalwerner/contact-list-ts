@@ -4,3 +4,9 @@ export type Contact = {
   emailAddress: string;
   firstNameLastName: string;
 };
+
+export type UIContact = {
+  data: Contact;
+  isSelected: boolean;
+  isPinned: boolean;
+};

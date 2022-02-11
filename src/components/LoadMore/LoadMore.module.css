@@ -1,2 +1,23 @@
 .root {
+  margin-top: 40px;
+}
+
+.button {
+  border: 1px solid #ddd;
+  background: #fff;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.finished,
+.error {
+  margin-top: 10px;
+}
+
+.finished {
+  color: #008000;
+}
+
+.error {
+  color: #ff0000;
 }
